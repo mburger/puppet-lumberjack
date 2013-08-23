@@ -1,0 +1,6 @@
+  - paths:
+<% [@files].flatten.each do |file| -%>
+    - <%= file %>
+<% end -%>
+    fields:
+      type: <%= @type %>

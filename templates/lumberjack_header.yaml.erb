@@ -1,0 +1,13 @@
+network:
+  servers:
+<% [@logstash_servers].flatten.each do |adr| -%>
+    - <%= adr %>
+<% end -%>
+<% unless @ssl_client_cert_path.nil? || @ssl_client_cert_path.empty? -%>
+  ssl certificate: <%= @ssl_client_cert_path %>
+<% end -%>
+<% unless @ssl_client_key_path.nil? || @ssl_client_key_path.empty? -%>
+  ssl key: <%= @ssl_client_key_path %>
+<% end -%>
+  ssl ca: <%= @ssl_ca_path %>
+files:

@@ -1,0 +1,3 @@
+# File managed by Puppet
+
+DAEMON_ARGS="-config <%= scope.lookupvar('lumberjack::config_file_json') %> -spool-size 100 -log-to-syslog"
